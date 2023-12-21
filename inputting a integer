@@ -1,7 +1,1 @@
-MIPS tutorial
-# how to input a integer
-***python
-li $v0,5
-syscall
-***
-this means load immediately(li) to register $v0 the code number is 5(it means input a integer to the register). When you call syscall(system call ) then the code will run perfectly
+M
