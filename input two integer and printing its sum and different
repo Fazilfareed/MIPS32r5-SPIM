@@ -6,21 +6,21 @@ _start:
 
 main:
 #read the first number and store in $t0
-	li $v0,5 #here 5 is the code for the register $vo to say input a integer
-	syscall #by this the inputted number will save it in the register $v0
-	move $t0,$v0 #by this you are moving the content of register $v0 to the register $t0
+	li $v0,5		#here 5 is the code for the register $vo to say input a integer
+	syscall 	 	#by this the inputted number will save it in the register $v0
+	move $t0,$v0	 	#by this you are moving the content of register $v0 to the register $t0
 #read the second number and store in $t1
 	li $v0,5
 	syscall
 	move $t1,$v0
 #print the total
-	add $t2,$t0,$t1 #$t2=$t0+$t1
-	move $a0,$t2
-	li $v0,1
+	add $t2,$t0,$t1 	#$t2=$t0+$t1
+	move $a0,$t2		#we are moving the content of $t2 to $a0
+	li $v0,1		#here 1 is the code for register $v0 print the integer which contains in register $a0
 	syscall
 #print the difference
-	sub $t3,$t0,$t1
-	move $a0,$t3
+	sub $t3,$t0,$t1 	#$t3=$t0-$t1
+	move $a0,$t3		#$a0<--$t3
 	li $v0,1
 	syscall
 	
