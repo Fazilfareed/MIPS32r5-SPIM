@@ -1,6 +1,6 @@
 MIPS tutorial
 # how to input a integer
-***MIPS
+***python
 li $v0,5
 syscall
 ***
