@@ -1,0 +1,28 @@
+.global _start
+_start:
+	jal main
+	li $v0, 10
+	syscall		# Use syscall 10 to stop simulation
+
+main:
+#read the first number and store in $t0
+	li $v0,5 #here 5 is the code for the register $vo to say input a integer
+	syscall #by this the inputted number will save it in the register $v0
+	move $t0,$v0 #by this you are moving the content of register $v0 to the register $t0
+#read the second number and store in $t1
+	li $v0,5
+	syscall
+	move $t1,$v0
+#print the total
+	add $t2,$t0,$t1 #$t2=$t0+$t1
+	move $a0,$t2
+	li $v0,1
+	syscall
+#print the difference
+	sub $t3,$t0,$t1
+	move $a0,$t3
+	li $v0,1
+	syscall
+	
+	li $v0,10
+	syscall
